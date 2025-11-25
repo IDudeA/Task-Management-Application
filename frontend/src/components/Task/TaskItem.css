@@ -1,0 +1,109 @@
+/* Main TaskCard component */
+.TaskCard {
+  position: relative;
+  background: white;
+  border-radius: 8px;
+  border-left: 14px solid #ddd;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 12px;
+  transition: all 0.3s ease;
+  margin: 20px 20px 20px 25px;
+  flex: 0 0 auto;
+  box-sizing: border-box;
+}
+
+/* TaskCard status color */
+.TaskCard[data-status="in_progress"] {
+  border-left-color: #42a5f5;
+}
+
+.TaskCard[data-status="ready"] {
+  border-left-color: #66bb6a;
+}
+
+.TaskCard[data-status="planned"] {
+  border-left-color: #ef5350;
+}
+
+
+.TaskCard:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
+}
+/* ------------------------------------------------ */
+
+/* Task Header */
+.TaskCardHeader {
+  margin-bottom: 8px;
+}
+
+.TaskCardHeader p {
+  margin: 0 0 4px 0;
+  font-size: 14px;
+  line-height: 1.3;
+}
+
+.TaskCardHeader p:first-child {
+  font-weight: 600;
+  color: #333;
+  font-size: 15px;
+}
+
+.TaskCardHeader p:last-child {
+  color: #666;
+  font-size: 13px;
+}
+/* ------------------------------------------------ */
+
+/* Task Delete and Edit Buttons */
+.TaskButtons {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.TaskDeleteButton, .TaskEditButton {
+  padding: 6px 12px;
+  max-width: 130px;
+  border: none;
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+/* Task Delete Button */
+.TaskDeleteButton {
+  background-color: #ffebee;
+  color: #d32f2f;
+}
+
+.TaskDeleteButton:hover {
+  background-color: #ffcdd2;
+}
+
+/* Task Edit Button */
+.TaskEditButton {
+  background-color: #e3f2fd;
+  color: #1976d2;
+}
+
+.TaskEditButton:hover {
+  background-color: #bbdefb;
+}
+/* ------------------------------------------------ */
+
+/* Task Datetime */
+.TaskDatetime {
+  border-top: 1px solid #f0f0f0;
+  padding-top: 8px;
+}
+
+.TaskDatetime p {
+  margin: 0;
+  font-size: 11px;
+  color: #999;
+  line-height: 1.2;
+}
+/* ------------------------------------------------ */

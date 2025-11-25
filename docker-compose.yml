@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  app_backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgresql+asyncpg://postgres:Superdron2005@db:5432
+    depends_on:
+      - db
+
+  db:
+    image: postgres:15
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=Superdron2005
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  app_frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - app_backend
+
+volumes:
+  postgres_data:

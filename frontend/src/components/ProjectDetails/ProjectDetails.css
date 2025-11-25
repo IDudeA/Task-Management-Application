@@ -1,0 +1,159 @@
+/* Main ProjectDetails component */
+.ProjectDetails {
+  padding: 40px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Empty ProjectDetails component */
+.ProjectDetails.empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.empty-state {
+  text-align: center;
+  color: #7f8c8d;
+}
+
+.empty-icon {
+  font-size: 64px;
+  margin-bottom: 20px;
+}
+
+.empty-state h3 {
+  font-size: 24px;
+  margin-bottom: 12px;
+  color: #2c3e50;
+}
+
+.empty-state p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+/* ------------------------------------------------ */
+
+/* Project Delete Button */
+.ProjectDeleteButton {
+  position: relative;
+  top: 0;
+  right: 0;
+  background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(255, 107, 107, 0.3);
+  width: 200px;
+}
+
+.ProjectDeleteButton:hover {
+  background: linear-gradient(135deg, #ff5252, #e53935);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.4);
+}
+
+.ProjectDeleteButton:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(255, 107, 107, 0.3);
+}
+
+.ProjectDeleteButton:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.3);
+}
+/* ------------------------------------------------ */
+
+/* Project Update Button */
+.ProjectUpdateButton {
+  position: relative;
+  top: 0;
+  right: 0;
+  background: #1976d2;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(255, 107, 107, 0.3);
+  width: 40px;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+.ProjectUpdateButton:hover {
+  background: #7bb9ec;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.4);
+}
+/* ------------------------------------------------ */
+
+/* Project Header */
+.ProjectHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #e1e8ed;
+}
+
+/* Header Title */
+.ProjectTitle {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.ProjectTitle h1 {
+  font-size: 32px;
+  color: #2c3e50;
+  margin: 0;
+}
+/* ------------------------------------------------ */
+
+/* Project Content */
+.ProjectContent {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+/* ------------------------------------------------ */
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .app {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 100%;
+    height: auto;
+    max-height: 40vh;
+  }
+  
+  .ProjectHeader {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  
+  .ProjectDetails {
+    padding: 20px;
+  }
+  
+  .InfoGrid {
+    grid-template-columns: 1fr;
+  }
+}
+/* ------------------------------------------------ */
