@@ -6,10 +6,27 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f5f6fa;
+  background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+  color: #111827;
+  line-height: 1.5;
 }
 
 .App {
   display: flex;
   height: 100vh;
+  background-color: #f9fafb;
+}
+
+/* Utility container for main content (if used) */
+.MainLayout {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .App {
+    flex-direction: column;
+  }
 }

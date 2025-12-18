@@ -5,7 +5,7 @@ import './TaskList.css'
 import { FaPlus } from "react-icons/fa";
 
 
-const TaskList = ({project_id }) => {
+const TaskList = ({project_id, setProjectStatus}) => {
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
     const [isModalOpen, setIsModalOpen] = useState(false)
@@ -21,6 +21,7 @@ const TaskList = ({project_id }) => {
             const response = await fetch(url)
             const data = await response.json()
             setTasks(data)
+            setProjectStatus(checkTasksStatusAlternative(data))
         } catch (err) {
             setError(err);
             console.error(err);
@@ -28,6 +29,26 @@ const TaskList = ({project_id }) => {
             setLoading(false)
         }
     }
+
+    function checkTasksStatusAlternative(tasks) {
+        // Проверяем, что массив не пустой
+        if (!tasks || tasks.length === 0) {
+            return "planned";
+        }
+        // Проверяем, все ли задачи имеют статус 'planned'
+        const allPlanned = tasks.every(task => task.status === 'planned');
+        if (allPlanned) {
+            return 'planned';
+        }
+        // Проверяем, все ли задачи имеют статус 'ready'
+        const allReady = tasks.every(task => task.status === 'ready');
+        if (allReady) {
+            return 'ready';
+        }
+        // Если не все задачи имеют одинаковый статус planned или ready
+        return 'in_progress';
+    }
+
 
 
     if (loading) {
