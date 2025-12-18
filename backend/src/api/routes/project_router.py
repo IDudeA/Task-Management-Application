@@ -22,7 +22,6 @@ Endpoints
 async def ProjectCreate(project: ProjectCreateModel = Depends()):
     new_project = ProjectOrm(
         name = project.name,
-        status = project.status,
     )
     async with session_fabric() as session:
         session.add(new_project)

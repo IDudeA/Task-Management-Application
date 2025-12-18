@@ -7,6 +7,7 @@ import ProjectInfo from './ProjectInfo';
 
 
 const ProjectDetails = ({ project, UpdateList, setSelectedProject}) => {
+  const [projectStatus, setProjectStatus] = useState('planned')
   const [isModalOpen, setIsModalOpen] = useState(false)
 
   if (!project) {
@@ -46,10 +47,10 @@ const ProjectDetails = ({ project, UpdateList, setSelectedProject}) => {
       </div>
 
       <div className="ProjectContent">
-        <ProjectInfo project={project}/>
+        <ProjectInfo project={project} projectStatus={projectStatus}/>
 
         <div className="ProjectInfo">
-          <TaskList key={project.id} project_id={project.id}/>
+          <TaskList key={project.id} project_id={project.id} setProjectStatus={setProjectStatus}/>
         </div>
       </div>
       

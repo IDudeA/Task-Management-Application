@@ -2,23 +2,19 @@ import React, { useState } from 'react';
 import './ProjectInfo.css'
 
 
-const ProjectInfo = ({ project }) => {
+const ProjectInfo = ({ project, projectStatus}) => {
 
   return (
     <div className="ProjectInfo">
         <h3>📊 Information about project</h3>
         <div className="InfoGrid">
         <div className="InfoItem">
-            <label>ID:</label>
-            <span>{project.id}</span>
-        </div>
-        <div className="InfoItem">
             <label>Status:</label>
-            <span className={`InfoStatus ${project.status}`}>{project.status}</span>
+            <span className={`InfoStatus ${projectStatus}`}>{projectStatus}</span>
         </div>
         <div className="InfoItem">
             <label>Created at:</label>
-            <span>{project.updated_at}</span>
+            <span>{project.created_at.slice(0, 10)}</span>
         </div>
         </div>
     </div>

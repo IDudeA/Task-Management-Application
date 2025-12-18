@@ -31,19 +31,13 @@ class TaskUpdateModel(TaskBaseModel):
 """
 Models for Projects
 """
-class ProjectStatus(Enum):
-    PLANNED = 'planned'
-    IN_PROGRESS = 'in_progress'
-    READY = 'ready'
 
 class ProjectBaseModel(BaseModel):
     name: str
-    status: ProjectStatus
 
 class ProjectCreateModel(ProjectBaseModel):
     pass 
 
 class ProjectUpdateModel(ProjectBaseModel):
     name: Optional[str] = None
-    status: Optional[ProjectStatus] = None
 

@@ -8,7 +8,7 @@
     align-items: center;
     flex-direction: column;
     padding: 40px 10px 40px 10px;
-    background-color: rgba(0,0,0, 0.7) !important;
+    background-color: rgba(15, 23, 42, 0.75) !important;
     overflow: hidden;
     overflow-y: auto;
     z-index: 999;
@@ -16,13 +16,14 @@
 }
 
 .modal-content {
-    background: white;
-    border-radius: 8px;
-    padding: 24px;
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 24px 24px 20px;
     width: 90%;
-    max-width: 500px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    max-width: 520px;
+    box-shadow: 0 24px 60px rgba(15, 23, 42, 0.35);
     position: relative;
+    border: 1px solid #e5e7eb;
 }
 
 .EnterNewTaskData {
@@ -33,41 +34,44 @@
 }
 
 .EnterNewTaskData input {
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    padding: 11px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
     font-size: 14px;
-    transition: border-color 0.3s ease;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .EnterNewTaskData input:focus {
     outline: none;
-    border-color: #007bff;
-    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
 }
 
 .EnterNewTaskData input::placeholder {
-    color: #999;
+    color: #9ca3af;
 }
 
 .EnterNewTaskData select {
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    padding: 11px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
     font-size: 14px;
-    transition: border-color 0.3s ease;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .EnterNewTaskData select:focus {
     outline: none;
-    border-color: #007bff;
-    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
 }
 
 .EnterNewTaskData select::placeholder {
-    color: #999;
+    color: #9ca3af;
 }
 
 .ModalTitle {
     padding-bottom: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #111827;
 }

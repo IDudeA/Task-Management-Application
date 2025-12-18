@@ -1,5 +1,5 @@
 # Imports
-from ..models.models import TaskStatus, ProjectStatus
+from ..models.models import TaskStatus
 from sqlalchemy.orm import Mapped, mapped_column, DeclarativeBase
 from sqlalchemy import Enum, ForeignKey
 from sqlalchemy.sql import func
@@ -27,7 +27,6 @@ class ProjectOrm(Base):
 
     id: Mapped[int] = mapped_column(primary_key=True, unique=True, nullable=False)
     name: Mapped[str] = mapped_column(unique=False, nullable=False)
-    status: Mapped[ProjectStatus] = mapped_column(Enum(ProjectStatus), unique=False, nullable=False)
     created_at: Mapped[datetime] = mapped_column(server_default=func.now(), nullable=False)
     updated_at: Mapped[datetime] = mapped_column(server_default=func.now(), onupdate=func.now(), nullable=False)
     
