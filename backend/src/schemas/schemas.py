@@ -12,6 +12,7 @@ class Base(DeclarativeBase):
 
 class TaskOrm(Base):
     __tablename__ = 'tasks'
+    __table_args__  = ({'comment': 'Tasks table'})
 
     id: Mapped[int] = mapped_column(primary_key=True, unique=True, nullable=False)
     project_id: Mapped[int] = mapped_column(ForeignKey('projects.id', ondelete='CASCADE'), unique=False, nullable=False)
@@ -24,6 +25,7 @@ class TaskOrm(Base):
 
 class ProjectOrm(Base):
     __tablename__ = 'projects'
+    __table_args__ = ({'comment': 'Projects table'})
 
     id: Mapped[int] = mapped_column(primary_key=True, unique=True, nullable=False)
     name: Mapped[str] = mapped_column(unique=False, nullable=False)
